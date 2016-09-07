@@ -31,8 +31,8 @@ zuul:
   #ignoredPatterns: /**/api/**
   routes:
     configgeneral:
-      path: /config-general/**
-      serviceId: config-general
+      path: /configg/**
+      serviceId: configg
     flight-control: /flightc/**
     complete-air: /complui/**
     fare-control:
