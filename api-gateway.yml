@@ -1,0 +1,67 @@
+# Define settings for Single-Sign-On with OAuth2; this means that we need to relay the OAuth token
+# to the subsequent resources that are proxied by the Zuul api gateway.
+
+# The home definition tells us to allow anonymous access (secure: false) to the static resources that
+# are accessed through the Zuul proxy.
+
+# Remaining properties are used by the OAuth2 SSO to determine where the authorization server is and
+# what client crendentials to use to access that server.
+
+logging:
+  level:
+     org:
+       springframework:
+         security: DEBUG
+# setting user
+
+auth-server:
+  uri: http://localhost:9999/uaa
+# Define the port where the API gateway server would be running
+server:
+  port: 8765
+
+# Define the routes which determine what URL are serviced by what applications.
+# The application/services are defined in the bootstrap.yml file of individual applications
+# using the spring.application.name property.
+
+# Note that we don't proxy the calls to the authorization server. The reason being that
+# Spring cloud security would need to secure the api gateway before it can route the
+# requests using zuul
+zuul:
+  #ignored-services: '*'
+  #ignoredPatterns: /**/api/**
+  routes:
+    config-general: /configg/**
+    flight-control: /flightc/**
+    complete-air: /complui/**
+    fare-control: /farec/**
+    user:
+      path: /user/**
+      url: ${auth-server.uri}/user
+  addProxyHeaders: true
+# Define security
+security:
+  user:
+    password: password
+  oauth2:
+    client:
+      accessTokenUri: ${auth-server.uri}/oauth/token
+      userAuthorizationUri: ${auth-server.uri}/oauth/authorize
+      clientId: client
+      clientSecret: secret
+      scope: read
+    resource:
+      userInfoUri: ${auth-server.uri}/user
+# Define the Eureka server that handles service registration
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
+ribbon:
+  ConnectTimeout: 3000
+  ReadTimeout: 60000
