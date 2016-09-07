@@ -31,10 +31,14 @@ zuul:
   #ignored-services: '*'
   #ignoredPatterns: /**/api/**
   routes:
-    config-general: /configg/**
+    config-general: 
+      path: /configg/**
+      serviceId: configg
     flight-control: /flightc/**
     complete-air: /complui/**
-    fare-control: /farec/**
+    fare-control:
+      path: /farec/**
+      serviceId: facec
     user:
       path: /user/**
       url: ${auth-server.uri}/user
