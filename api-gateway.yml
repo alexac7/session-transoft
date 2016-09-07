@@ -33,11 +33,13 @@ zuul:
     configgeneral:
       path: /configgeneral/**
       serviceId: configgeneral
-    flight-control: /flightc/**
+    flightcontrol:
+      path: /flightc/**
+      serviceId: flightcontrol
     complete-air: /complui/**
-    fare-control:
-      path: /farec/**
-      serviceId: facec
+    farecontrol:
+      path: /farecontrol/**
+      serviceId: farecontrol
     user:
       path: /user/**
       url: ${auth-server.uri}/user
