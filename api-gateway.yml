@@ -13,7 +13,6 @@ logging:
        springframework:
          security: DEBUG
 # setting user
-
 auth-server:
   uri: http://localhost:9999/uaa
 # Define the port where the API gateway server would be running
@@ -31,7 +30,7 @@ zuul:
   #ignored-services: '*'
   #ignoredPatterns: /**/api/**
   routes:
-    config-general:
+    configgeneral:
       path: /config-general/**
       serviceId: config-general
     flight-control: /flightc/**
