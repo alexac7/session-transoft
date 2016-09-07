@@ -31,9 +31,9 @@ zuul:
   #ignored-services: '*'
   #ignoredPatterns: /**/api/**
   routes:
-    config-general: /config/** 
-      #path: /configg/**
-      #serviceId: configg
+    config-general:
+      path: /config-general/**
+      serviceId: config-general
     flight-control: /flightc/**
     complete-air: /complui/**
     fare-control:
@@ -42,7 +42,7 @@ zuul:
     user:
       path: /user/**
       url: ${auth-server.uri}/user
-  addProxyHeaders: true
+  #addProxyHeaders: true
 # Define security
 security:
   user:
@@ -58,8 +58,8 @@ security:
       userInfoUri: ${auth-server.uri}/user
 # Define the Eureka server that handles service registration
 eureka:
-  instance:
-    prefer-ip-address: true
+  #instance:
+    #prefer-ip-address: true
   client:
     registerWithEureka: true
     fetchRegistry: true
