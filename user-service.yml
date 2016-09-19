@@ -25,7 +25,11 @@ security:
 
   oauth2:
       client:
+        clientId: normal-app
+        authorized-grant-types: authorization_code,implicit
+        scope: openid
+      client:
         clientId: client
         clientSecret: secret
-        authorized-grant-types: authorization_code,refresh_token,password
+        authorized-grant-types: client_credentials,refresh_token,password
         scope: openid
