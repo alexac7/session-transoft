@@ -22,7 +22,6 @@ security:
   enable-csrf: false
   user:
     password: password
-
   oauth2:
     client:
       clientId: client
