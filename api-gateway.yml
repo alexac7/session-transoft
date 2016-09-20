@@ -28,34 +28,40 @@ server:
 # Spring cloud security would need to secure the api gateway before it can route the
 # requests using zuul
 zuul:
-  #ignored-services: '*'
+  ignored-services: '*'
   #ignoredPatterns: /**/api/**
   routes:
     configgeneral:
-      path: /configgeneral/**
-      serviceId: configgeneral
+      path: /configg/**
+      #serviceId: configgeneral
+      url: http://localhost:8083
     flightcontrol:
       path: /flightc/**
-      serviceId: flightcontrol
+      #serviceId: flightcontrol
+      url: http://localhost:8082
     complete-air: /complui/**
     farecontrol:
       path: /farecontrol/**
-      serviceId: farecontrol
+      #serviceId: farecontrol
+      url: http://localhost:8084
     user:
       path: /user/**
       url: ${auth-server.uri}/user
+    user-service:
+      path: /users/**
   #addProxyHeaders: true
 # Define security
 security:
-  user:
-    password: password
+  enable-csrf: false
+  #user:
+    #password: password
   oauth2:
     client:
       accessTokenUri: ${auth-server.uri}/oauth/token
       userAuthorizationUri: ${auth-server.uri}/oauth/authorize
       clientId: client
       clientSecret: secret
-      scope: read
+      #scope: read
     resource:
       userInfoUri: ${auth-server.uri}/user
 # Define the Eureka server that handles service registration
