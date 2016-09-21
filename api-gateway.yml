@@ -44,11 +44,12 @@ zuul:
       path: /farecontrol/**
       #serviceId: farecontrol
       url: http://localhost:8084
-    user:
+    #user:
+      #path: /user/**
+      #url: ${auth-server.uri}/user
+    user-service:
       path: /user/**
       url: ${auth-server.uri}/user
-    user-service:
-      path: /users/**
   #addProxyHeaders: true
 # Define security
 security:
