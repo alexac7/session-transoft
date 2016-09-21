@@ -14,7 +14,7 @@ logging:
          security: DEBUG
 # setting user
 auth-server:
-  uri: http://localhost:9999
+  uri: http://localhost:9999/uaa
 # Define the port where the API gateway server would be running
 server:
   port: 8765
@@ -29,7 +29,7 @@ server:
 # requests using zuul
 zuul:
   ignored-services: '*'
-  #ignoredPatterns: /**/api/**
+  ignoredPatterns: /**/api/**
   routes:
     configgeneral:
       path: /configg/**
@@ -57,11 +57,11 @@ security:
   #user:
     #password: password
   oauth2:
-    client:
-      accessTokenUri: ${auth-server.uri}/oauth/token
-      userAuthorizationUri: ${auth-server.uri}/oauth/authorize
-      clientId: client
-      clientSecret: secret
+    #client:
+      #accessTokenUri: ${auth-server.uri}/oauth/token
+      #userAuthorizationUri: ${auth-server.uri}/oauth/authorize
+      #clientId: client
+      #clientSecret: secret
       #scope: read
     resource:
       userInfoUri: ${auth-server.uri}/user
@@ -74,7 +74,7 @@ eureka:
     fetchRegistry: true
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
-hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
-ribbon:
-  ConnectTimeout: 3000
-  ReadTimeout: 60000
+#hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
+#ribbon:
+  #ConnectTimeout: 3000
+  #ReadTimeout: 60000
