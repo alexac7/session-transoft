@@ -52,7 +52,7 @@ zuul:
   #addProxyHeaders: true
 # Define security
 security:
-  enable-csrf: false
+  #enable-csrf: false
   #user:
     #password: password
   oauth2:
