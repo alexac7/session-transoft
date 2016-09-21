@@ -31,25 +31,11 @@ zuul:
   ignored-services: '*'
   ignoredPatterns: /**/api/**
   routes:
-    configgeneral:
-      path: /configg/**
-      #serviceId: configgeneral
-      url: http://localhost:8083
-    flightcontrol:
-      path: /flightc/**
-      #serviceId: flightcontrol
-      url: http://localhost:8082
+    configgeneral: /configg/**
+    flightcontrol: /flightc/**
     complete-air: /complui/**
-    farecontrol:
-      path: /farecontrol/**
-      #serviceId: farecontrol
-      url: http://localhost:8084
-    user:
-      path: /user/**
-      url: ${auth-server.uri}/user
-    user-service:
-      path: /users/**
-      url: http://localhost:9999
+    farecontrol: /farecontrol/**
+    user-service: /user/**
   #addProxyHeaders: true
 # Define security
 security:
