@@ -12,7 +12,11 @@ spring:
     url: jdbc:mysql://localhost/auth
     username: root
     password: mysql
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class: com.mysql.jdbc.Driver
+    initialize: true
+    continueOnError: false
+    schema: classpath:/schema.sql
+    data: classpath:/data.sql
   jpa:
     database-platform: org.hibernate.dialect.MySQLDialect
     hibernate:
