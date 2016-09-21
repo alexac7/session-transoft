@@ -23,9 +23,9 @@ spring:
       ddl-auto: validate
 
 security:
-  enable-csrf: false
-  #user:
-    #password: password
+  #enable-csrf: false
+  user:
+    password: password
   #oauth2:
     #client:
       #clientId: client
