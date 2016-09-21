@@ -1,6 +1,6 @@
 server:
   port: 9999
-  contextPath: /
+  contextPath: /uaa
 # config registry eureka
 eureka:
   client:
@@ -22,8 +22,8 @@ spring:
     hibernate:
       ddl-auto: validate
 
-#security:
-  #enable-csrf: false
+security:
+  enable-csrf: false
   #user:
     #password: password
   #oauth2:
@@ -32,4 +32,4 @@ spring:
       #clientSecret: secret
       #authorized-grant-types: client_credentials,refresh_token,password
       #scope: openid
-security.ignored: /resources/**
+#security.ignored: /resources/**
