@@ -44,27 +44,27 @@ zuul:
       path: /farecontrol/**
       #serviceId: farecontrol
       url: http://localhost:8084
-    user:
-      path: /user/**
-      url: ${auth-server.uri}/user
+    #user:
+      #path: /user/**
+      #url: ${auth-server.uri}/user
     user-service:
       path: /users/**
       url: http://localhost:9999
   #addProxyHeaders: true
 # Define security
-security:
+#security:
   #enable-csrf: false
   #user:
     #password: password
-  oauth2:
+  #oauth2:
     #client:
       #accessTokenUri: ${auth-server.uri}/oauth/token
       #userAuthorizationUri: ${auth-server.uri}/oauth/authorize
       #clientId: client
       #clientSecret: secret
       #scope: read
-    resource:
-      userInfoUri: ${auth-server.uri}/user
+    #resource:
+      #userInfoUri: ${auth-server.uri}/user
 # Define the Eureka server that handles service registration
 eureka:
   #instance:
