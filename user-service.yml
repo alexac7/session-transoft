@@ -24,8 +24,8 @@ spring:
 
 security:
   #enable-csrf: false
-  user:
-    password: password
+  #user:
+    #password: password
   #oauth2:
     #client:
       #clientId: client
