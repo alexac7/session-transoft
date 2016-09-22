@@ -50,7 +50,7 @@ zuul:
     user-service:
       path: /users/**
       url: http://localhost:9999
-  #addProxyHeaders: true
+  addProxyHeaders: true
 # Define security
 security:
   #enable-csrf: false
