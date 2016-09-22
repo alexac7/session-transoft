@@ -54,8 +54,8 @@ zuul:
 # Define security
 security:
   #enable-csrf: false
-  user:
-    password: password
+  #user:
+    #password: password
   oauth2:
     client:
       accessTokenUri: ${auth-server.uri}/oauth/token
