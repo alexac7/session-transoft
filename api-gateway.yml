@@ -46,7 +46,7 @@ zuul:
       url: http://localhost:8084
     user:
       path: /user/**
-      url: ${auth-server.uri}/user
+      url: ${auth-server.uri}/
     user-service:
       path: /users/**
       url: http://localhost:9999
