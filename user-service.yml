@@ -1,6 +1,6 @@
 server:
   port: 9999
-  #contextPath: /uaa
+  contextPath: /uaa
 # config registry eureka
 eureka:
   client:
@@ -21,6 +21,11 @@ spring:
     database-platform: org.hibernate.dialect.MySQLDialect
     hibernate:
       ddl-auto: validate
+# config security
+security: 
+  user: 
+    password: password 
+
 
 #security:
   #enable-csrf: false
