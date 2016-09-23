@@ -14,7 +14,7 @@ logging:
          security: DEBUG
 # setting user
 auth-server:
-  uri: http://localhost:9999/uaa
+  uri: http://localhost:9999/
 # Define the port where the API gateway server would be running
 server:
   port: 8765
