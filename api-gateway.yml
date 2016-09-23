@@ -60,8 +60,8 @@ security:
     client:
       accessTokenUri: ${auth-server.uri}/oauth/token
       userAuthorizationUri: ${auth-server.uri}/oauth/authorize
-      clientId: clientapp
-      clientSecret: 123456
+      clientId: client
+      clientSecret: secret
       #scope: read
     resource:
       userInfoUri: ${auth-server.uri}/user
