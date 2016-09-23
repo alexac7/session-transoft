@@ -51,6 +51,12 @@ logging:
 server:
   port: 8083
   #context-path: /uaa
+# config security server
+authserver: 
+  hostname: localhost 
+  port: 9999 
+  contextPath: uaa 
+
 
 #
 #tomcat:
@@ -64,4 +70,9 @@ eureka:
 security:
   oauth2:
     resource:
-      userInfoUri: http://localhost:9999/uaa/user
+      userInfoUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/user
+      preferTokenInfo: false
+    client
+      accessTokenUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/oauth/token
+      userAuthorizationUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/oauth/authorize
+      clientId: client
