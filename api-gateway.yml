@@ -53,7 +53,8 @@ zuul:
       url: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}
     user-service:
       path: /users/**
-      url: http://localhost:9999
+      stripPrefix: true
+      url: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}
   addProxyHeaders: true
 # Define security
 security:
