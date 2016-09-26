@@ -22,7 +22,11 @@ authserver:
 server:
   port: 8765
   session-timeout: 10
-  
+# config password Oauth2
+security:  
+  user:  
+    password: password 
+
 # Define the routes which determine what URL are serviced by what applications.
 # The application/services are defined in the bootstrap.yml file of individual applications
 # using the spring.application.name property.
