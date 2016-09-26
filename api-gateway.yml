@@ -51,12 +51,12 @@ zuul:
     user:
       sensitiveHeaders:
       path: /api/loggedinuser/**
-      stripPrefix: false
+      #stripPrefix: false
       url: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}
     user-service:
       sensitiveHeaders:
       path: /users/**
-      stripPrefix: false
+      #stripPrefix: false
       url: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}
   addProxyHeaders: true
 # Define security
@@ -64,7 +64,7 @@ security:
   basic: 
     enabled: false 
   user:
-    password: none #password
+    password: password
   oauth2:
     client:
       accessTokenUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/oauth/token
