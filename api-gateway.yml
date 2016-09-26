@@ -60,7 +60,7 @@ zuul:
 # Define security
 security:
   user:
-    password: password
+    password: none #password
   oauth2:
     client:
       accessTokenUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/oauth/token
