@@ -13,7 +13,7 @@
         #security: DEBUG
 logging:
   level:
-    org.springframework.security: DEBUG
+    org.springframework.security: ERROR
 # setting user
 authserver: 
   hostname: localhost 
