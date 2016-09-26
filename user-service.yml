@@ -1,6 +1,6 @@
 server:
   port: 9999
-  contextPath: /
+  contextPath: /uaa
 # config registry eureka
 eureka:
   client:
