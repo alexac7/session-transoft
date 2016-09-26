@@ -49,16 +49,20 @@ zuul:
       #serviceId: farecontrol
       url: http://localhost:8084
     user:
+      sensitiveHeaders:
       path: /api/loggedinuser/**
-      stripPrefix: true
+      stripPrefix: false
       url: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}
     user-service:
+      sensitiveHeaders:
       path: /users/**
-      stripPrefix: true
+      stripPrefix: false
       url: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}
   addProxyHeaders: true
 # Define security
 security:
+  basic: 
+    enabled: false 
   user:
     password: none #password
   oauth2:
