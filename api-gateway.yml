@@ -60,6 +60,8 @@ zuul:
   addProxyHeaders: true
 # Define security
 security:
+  user:
+    password: password
   oauth2:
     client:
       accessTokenUri: http://${authserver.hostname}:${authserver.port}/${authserver.contextPath}/oauth/token
