@@ -22,6 +22,7 @@ authserver:
 server:
   port: 8765
   session-timeout: 10
+
 # config password Oauth2
 security:  
   user:  
