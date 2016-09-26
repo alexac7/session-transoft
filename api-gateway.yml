@@ -7,11 +7,11 @@
 # Remaining properties are used by the OAuth2 SSO to determine where the authorization server is and
 # what client crendentials to use to access that server.
 
-#logging:
-  #level:
-    #org:
-      #springframework:
-        #security: DEBUG
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
 # setting user
 authserver: 
   hostname: localhost 
