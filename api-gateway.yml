@@ -61,8 +61,9 @@ zuul:
   addProxyHeaders: true
 # Define security
 security:
-  basic: 
-    enabled: false 
+  basic:
+    enabled: false
+  enable-csrf: false
   user:
     password: password
   oauth2:
