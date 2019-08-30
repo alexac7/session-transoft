@@ -1,7 +1,16 @@
+# email
 mail:
   domain: gmail.com
-info:
-  id: ${spring.application.name}
-logging:
-  level:
-    org.springframework.security: DEBUG
+# info logging demo
+#info:
+  #id: ${spring.application.name}
+#logging:
+  #level:
+    #org.springframework.security: DEBUG
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: basic
